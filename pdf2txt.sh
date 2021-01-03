@@ -2,7 +2,7 @@
 
 # script manual
 usage() {
-    printf "Usage: pdf2txt -i [input file with directory] -o [output directory] -r\n -i: input file with directory (input file with directory (E.g - /home/user/Documents/sample.pdf)\n -o: output directory (E.g - /home/user/output-folder)\n -r: include this to remove images and text folders"
+    printf "Usage: pdf2txt -i [input file with directory] -o [output directory] -r\n -i: input file with directory (E.g - /home/user/Documents/sample.pdf)\n -o: output directory (E.g - /home/user/output-folder)\n -r: include this to remove images and text folders"
 }
 
 # throw err
@@ -28,6 +28,7 @@ done
 
 shift $((OPTIND - 1))
 
+# if no parameters defined, show usage
 if [ -z "${i}" ] || [ -z "${o}" ] || [ -z "${r}" ]; then
     usage
     exit 1
