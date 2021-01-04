@@ -2,7 +2,7 @@
 
 # script manual
 usage() {
-  printf "Usage: split-pdf -i [input file with directory] -o [output directory]\n -i: input file with directory (E.g - /home/user/Documents/sample.pdf)\n -o: output directory (E.g - /home/user/output-folder)"
+  printf "Usage: ./split-pdf.sh -i [input file with directory] -o [output directory]\n -i: input file with directory (E.g - /home/user/Documents/sample.pdf)\n -o: output directory (E.g - /home/user/output-folder)"
 }
 
 # throw err

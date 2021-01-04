@@ -2,7 +2,7 @@
 
 # script manual
 usage() {
-    printf "Usage: pdf2txt -i [input file with directory] -o [output directory] -r\n -i: input file with directory (E.g - /home/user/Documents/sample.pdf)\n -o: output directory (E.g - /home/user/output-folder)\n -r: include this to remove images and text folders"
+    printf "Usage: ./pdf2txt.sh -i [input file with directory] -o [output directory] -r\n -i: input file with directory (E.g - /home/user/Documents/sample.pdf)\n -o: output directory (E.g - /home/user/output-folder)\n -r: include this to remove images and text folders"
 }
 
 # throw err
@@ -63,7 +63,7 @@ for img in ${img_dir}/*.png; do
     img_name_ext=$(basename -- "${img}")
     img_name_noext="${img_name_ext%.*}"
 
-    tesseract ${img} ${txt_dir}/${img_name_noext} -l mya --psm 6 --dpi 150 >/dev/null 2>&1
+    tesseract ${img} ${txt_dir}/${img_name_noext} -l mya --psm 3 --dpi 150 >/dev/null 2>&1
 done
 
 echo "Conversion to text files finished."

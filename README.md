@@ -1,7 +1,5 @@
 # Shell scripts for preprocessing pdf files before creating ebooks
 
-# Scripts
-
 ## pdf2txt
 
 Script for converting pdf files to text files; won't work with pdfs with split pages
@@ -20,6 +18,10 @@ Script for converting pdf files to text files; won't work with pdfs with split p
 
 `./pdf2txt.sh -i [input file with directory] -o [output directory] -r [true or false]`
 
+Example:
+
+`./pdf2txt.sh -i /home/user/Documents/sample.pdf -o /home/user/output-folder -r true`
+
 ## split-pdf
 
 Script for converting double-page PDF into single-page PDF
@@ -36,3 +38,29 @@ Script for converting double-page PDF into single-page PDF
 ### How to Use
 
 `./split-pdf.sh -i [input file with directory] -o [output directory]`
+
+Example:
+
+`./split-pdf.sh -i /home/user/Documents/sample.pdf -o /home/user/output-folder -r true`
+
+## cleanup-txt
+
+Script for cleaning up the resulting text file from OCR.
+
+Currently:
+
+- remove single line breaks to form paragraphs
+- remove blank lines separating the paragraphs
+- remove form feed characters
+
+(May add more in the future.)
+
+### Dependencies
+
+- perl
+  - for regular expression replacements
+  - Arch Linux: should already be installed but, if not, `sudo pacman -S perl`
+
+### How to Use
+
+`./cleanup-txt.sh -i /home/user/Documents/sample.txt -o /home/user/output-folder -r true`
